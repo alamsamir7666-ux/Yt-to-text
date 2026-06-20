@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: transcriptai-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: API_KEY
+        sync: false  # Set in Render dashboard
+      - key: ALLOWED_ORIGIN
+        sync: false  # Your Vercel URL
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
