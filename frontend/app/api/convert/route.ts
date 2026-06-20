@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
         char_count: data.transcript.fullText.length,
         method: data.method,
         status: "completed",
-      }).catch(console.error);
+      });
     }
 
     return NextResponse.json(data);
