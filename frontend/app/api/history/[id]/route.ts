@@ -19,6 +19,10 @@ export async function DELETE(
 
     const user = await getUser();
 
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const { data: dbUser } = await supabase
       .from("users")
       .select("id")
