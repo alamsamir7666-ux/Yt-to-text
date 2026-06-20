@@ -7,7 +7,7 @@ import HamburgerButton from "./HamburgerButton";
 import type { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
 
 interface Props {
-  user: KindeUser | null;
+  user: KindeUser<Record<string, any>> | null;
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
 }
