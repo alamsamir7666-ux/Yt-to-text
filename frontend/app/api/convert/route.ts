@@ -15,6 +15,9 @@ export async function POST(req: NextRequest) {
     }
 
     const user = await getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
     const body = await req.json();
     const { url, language = "en", includeTimestamps = true } = body;
 
