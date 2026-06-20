@@ -7,7 +7,7 @@ import type { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
 
 interface Props {
   children: React.ReactNode;
-  user: KindeUser | null;
+  user: KindeUser<Record<string, any>> | null;
 }
 
 export default function DashboardWrapper({ children, user }: Props) {
